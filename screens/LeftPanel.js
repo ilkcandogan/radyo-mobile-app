@@ -38,7 +38,7 @@ const LeftPanel = () => {
   return (
     <View style={styles.leftPanel}>
       <TouchableOpacity style={styles.item}>
-        <Entypo name="folder-video" size={24} style={[styles.icon, styles.blackColor]} />
+        <Entypo name="folder-music" size={24} style={[styles.icon, styles.blackColor]} />
         <Text style={styles.grayColor}>İstek Yap</Text>
       </TouchableOpacity>
       {menuItems.map((item, index) => (
