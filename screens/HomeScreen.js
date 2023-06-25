@@ -12,13 +12,8 @@ const styles = StyleSheet.create({
   image: {
     width: 500,
     height: 500,
-    marginTop: -60
+    marginTop: -40
   },
-  text: {
-    fontSize: 20,
-    marginTop: -20,
-    color: 'red'
-  }
 });
 
 const HomeScreen = () => {
@@ -29,7 +24,6 @@ const HomeScreen = () => {
         source={require('../logo.png')}
         style={styles.image}
       />
-      <Text style={styles.text}>“bir radyodan fazlası”</Text>
     </View>
     <PlayerCard />
     </>

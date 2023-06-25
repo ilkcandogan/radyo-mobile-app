@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = {
   leftPanel: {
@@ -29,9 +30,7 @@ const styles = {
 
 const LeftPanel = () => {
   const menuItems = [
-    {name: 'Facebook', icon: 'logo-facebook'},
-    {name: 'Twitter', icon: 'logo-twitter'},
-    {name: 'Instagram', icon: 'logo-instagram'}
+    {name: 'Haber Oku', icon: 'globe-outline'},
     // Add more items here
   ];
 
@@ -39,7 +38,11 @@ const LeftPanel = () => {
     <View style={styles.leftPanel}>
       <TouchableOpacity style={styles.item}>
         <Entypo name="folder-music" size={24} style={[styles.icon, styles.blackColor]} />
-        <Text style={styles.grayColor}>İstek Yap</Text>
+        <Text style={styles.grayColor}>İstek Parça</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <MaterialIcon name="phone" size={24} style={[styles.icon, styles.blackColor]} />
+        <Text style={styles.grayColor}>Canlı Yayına Bağlan</Text>
       </TouchableOpacity>
       {menuItems.map((item, index) => (
         <TouchableOpacity key={index} style={styles.item}>
