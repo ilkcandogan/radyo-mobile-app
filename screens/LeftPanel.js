@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Linking } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -36,16 +36,16 @@ const LeftPanel = () => {
 
   return (
     <View style={styles.leftPanel}>
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => Linking.openURL('https://wa.me/905355183212')} >
         <Entypo name="folder-music" size={24} style={[styles.icon, styles.blackColor]} />
         <Text style={styles.grayColor}>İstek Parça</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => Linking.openURL('https://wa.me/905355183212')} >
         <MaterialIcon name="phone" size={24} style={[styles.icon, styles.blackColor]} />
         <Text style={styles.grayColor}>Canlı Yayına Bağlan</Text>
       </TouchableOpacity>
       {menuItems.map((item, index) => (
-        <TouchableOpacity key={index} style={styles.item}>
+        <TouchableOpacity key={index} style={styles.item} onPress={() => Linking.openURL('https://radyoeski.net/')} >
           <Ionicons name={item.icon} size={24} style={[styles.icon, styles.blackColor]} />
           <Text style={styles.grayColor}>{item.name}</Text>
         </TouchableOpacity>

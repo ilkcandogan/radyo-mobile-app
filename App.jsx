@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Linking, Share, BackHandler } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -30,13 +30,19 @@ const App = () => {
           ),
           headerRight: () => (
             <View style={{flexDirection: 'row'}}>
-              <TouchableOpacity onPress={() => {} } style={styles.rightButton}>
+              <TouchableOpacity style={styles.rightButton} onPress={() => Linking.openURL('https://wa.me/905355183212')}>
                 <Entypo name="folder-music" size={24} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => {} } style={styles.rightButton}>
+              <TouchableOpacity style={styles.rightButton} onPress={() => {
+                Share.share({
+                  message: 'https://play.google.com/store/apps/details?id=com.radyoeski',
+                  url: 'https://play.google.com/store/apps/details?id=com.radyoeski',
+                  title: 'Radyo Eski'
+                })
+              }}>
                 <Ionicons name="share-social" size={24} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => {} } style={styles.rightButton}>
+              <TouchableOpacity onPress={() => BackHandler.exitApp() } style={styles.rightButton}>
                 <Ionicons name="power-sharp" size={24} color="white" />
               </TouchableOpacity>
             </View>
