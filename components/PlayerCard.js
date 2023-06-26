@@ -9,6 +9,7 @@ const PlayerCard = () => {
 
   useEffect(() => {
     setupPlayer();
+    setupMusicControl();
   }, []);
 
   const setupPlayer = async () => {
@@ -19,9 +20,15 @@ const PlayerCard = () => {
       title: 'Radyo Eski',
       artist: 'Bir Radyodan Fazlası',
     });
-
-    MusicControl.enableControl('play', true);
-    MusicControl.enableControl('pause', true);
+  };
+  
+  const setupMusicControl = async () => {
+    MusicControl.setNowPlaying({
+      title: 'Radyo Eski',
+      artist: 'Bir Radyodan Fazlası',
+      duration: 0,
+      color: 0xFFFFFF,
+    });
   };
 
   const togglePlayback = async () => {
