@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import TrackPlayer from 'react-native-track-player';
+import MusicControl from 'react-native-music-control';
 
 const PlayerCard = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -15,16 +16,25 @@ const PlayerCard = () => {
     await TrackPlayer.add({
       id: 'radioStream1',
       url: 'https://radyo1.radyo-dinle.tc/8076/stream',
-      title: 'Radyo Yayını',
-      artist: 'Radyo İstasyonu',
+      title: 'Radyo Eski',
+      artist: 'Bir Radyodan Fazlası',
     });
+
+    MusicControl.enableControl('play', true);
+    MusicControl.enableControl('pause', true);
   };
 
   const togglePlayback = async () => {
     if (isPlaying) {
       await TrackPlayer.pause();
+      MusicControl.updatePlayback({
+        state: MusicControl.STATE_PAUSED,
+      });
     } else {
       await TrackPlayer.play();
+      MusicControl.updatePlayback({
+        state: MusicControl.STATE_PLAYING,
+      });
     }
     setIsPlaying(!isPlaying);
   };
