@@ -22,7 +22,7 @@ const App = () => {
             color: 'white',
           },
           headerTitleAlign: 'left',
-          headerTitle: "DEMO - İLKCAN DOĞAN",
+          headerTitle: "",
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={styles.hamburgerIcon}>
               <Ionicons name="ios-menu" size={24} color="white" />
