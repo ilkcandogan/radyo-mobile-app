@@ -21,7 +21,8 @@ const styles = {
     marginRight: 10,
   },
   grayColor: {
-    color: 'gray'
+    color: 'gray',
+    fontSize: 20
   },
   blackColor: {
     color: 'black'
@@ -37,16 +38,16 @@ const LeftPanel = () => {
   return (
     <View style={styles.leftPanel}>
       <TouchableOpacity style={styles.item} onPress={() => Linking.openURL('https://wa.me/905355183212')} >
-        <Entypo name="folder-music" size={24} style={[styles.icon, styles.blackColor]} />
+        <Entypo name="folder-music" size={35} style={[styles.icon, styles.blackColor]} />
         <Text style={styles.grayColor}>İstek Parça</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.item} onPress={() => Linking.openURL('https://wa.me/905355183212')} >
-        <MaterialIcon name="phone" size={24} style={[styles.icon, styles.blackColor]} />
+        <MaterialIcon name="phone" size={35} style={[styles.icon, styles.blackColor]} />
         <Text style={styles.grayColor}>Canlı Yayına Bağlan</Text>
       </TouchableOpacity>
       {menuItems.map((item, index) => (
         <TouchableOpacity key={index} style={styles.item} onPress={() => Linking.openURL('https://radyoeski.net/')} >
-          <Ionicons name={item.icon} size={24} style={[styles.icon, styles.blackColor]} />
+          <Ionicons name={item.icon} size={35} style={[styles.icon, styles.blackColor]} />
           <Text style={styles.grayColor}>{item.name}</Text>
         </TouchableOpacity>
       ))}
